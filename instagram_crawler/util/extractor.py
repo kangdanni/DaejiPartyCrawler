@@ -436,7 +436,7 @@ def extract_information(browser, username, limit_amount):
     isprivate = False
 
     try:
-        user_link = "https://www.instagram.com/{}/".format(username)
+        user_link = "https://www.instagram.com/{}/?hl=en".format(username)
         web_adress_navigator(browser, user_link)
     except PageNotFound404 as e:
         raise NoInstaProfilePageFound(e)
