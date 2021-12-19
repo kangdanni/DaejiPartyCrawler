@@ -102,3 +102,4 @@ virtualenv/
 images
 images*
 profiles*
+*.pkl
