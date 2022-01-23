@@ -7,9 +7,14 @@ from kakao_map_crawler.util.extractor import extract_review_info
 with SetupBrowserEnvironment() as browser:
     location_names = extract_choizaroad_location_names()
     print('location_names:', location_names)
+
+    res = []
     for location_name in location_names:
         restaurant_info = get_restaurant_info(location_name)
         print('restaurant_info:', restaurant_info)
-        reviews = extract_review_info(browser, restaurant_id=restaurant_info['id'])
-        print('reviews:', reviews)
+        if len(restaurant_info)>0 :
+            reviews = extract_review_info(browser, restaurant_id=restaurant_info['id'])
+            print('reviews:', reviews)
+            res.append({'restaurant_info': restaurant_info, 'review': reviews})
 
+    print(res)
