@@ -5,11 +5,11 @@ import math
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 import requests
-from util.settings import Settings
-from .util import web_adress_navigator
+from instagram_crawler.util.settings import Settings
+from instagram_crawler.util.util import web_adress_navigator
 import datetime
-from util.instalogger import InstaLogger
-from util.exceptions import PageNotFound404, NoInstaPostPageFound
+from instagram_crawler.util.instalogger import InstaLogger
+from instagram_crawler.util.exceptions import PageNotFound404, NoInstaPostPageFound
 
 
 class InstagramPost:

@@ -1,6 +1,6 @@
-from util.logger import KakaoMapCrawlingLogger
-from util.util import web_adress_navigator
-from util.exceptions import PageNotFound404, NoRestaurantPageFound
+from kakao_map_crawler.util.logger import KakaoMapCrawlingLogger
+from kakao_map_crawler.util.util import web_adress_navigator
+from kakao_map_crawler.util.exceptions import PageNotFound404, NoRestaurantPageFound
 
 
 def extract_review_info(browser, restaurant_id):

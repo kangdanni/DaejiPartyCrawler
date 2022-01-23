@@ -15,11 +15,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from .settings import Settings
-from .time_util import sleep
-from .time_util import sleep_actual
-from .exceptions import PageNotFound404
-from .instalogger import InstaLogger
+from instagram_crawler.util.settings import Settings
+from instagram_crawler.util.time_util import sleep
+from instagram_crawler.util.time_util import sleep_actual
+from instagram_crawler.util.exceptions import PageNotFound404
+from instagram_crawler.util.instalogger import InstaLogger
 
 
 def web_adress_navigator(browser, link):

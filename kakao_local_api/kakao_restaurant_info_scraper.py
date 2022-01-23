@@ -22,5 +22,5 @@ def get_restaurant_info(keyword):
     return data['documents'][0] if len(data['documents']) > 0 else {}
 
 
-print(get_restaurant_info('이원화구포국시'))
+# print(get_restaurant_info('이원화구포국시'))
 # print(get_restaurant_info(''))

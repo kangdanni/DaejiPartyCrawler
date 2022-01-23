@@ -6,9 +6,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver import DesiredCapabilities
 from webdriver_manager.chrome import ChromeDriverManager
 
-from util.exceptions import WebDriverException
-from util.logger import KakaoMapCrawlingLogger
-from util.settings import Settings
+from kakao_map_crawler.util.exceptions import WebDriverException
+from kakao_map_crawler.util.logger import KakaoMapCrawlingLogger
+from kakao_map_crawler.util.settings import Settings
 
 
 class SetupBrowserEnvironment:

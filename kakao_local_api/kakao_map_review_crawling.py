@@ -14,18 +14,20 @@ from bs4 import BeautifulSoup
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
 options.add_argument('lang=ko_KR')
-chromedriver_path = "C:/py_exercise_timer/chromedriver.exe"
-driver = webdriver.Chrome(os.path.join(os.getcwd(), chromedriver_path), options=options)  # chromedriver 열기
+# chromedriver_path = "C:/py_exercise_timer/chromedriver.exe"
+chromedriver_path = "/Users/chaehwan/workspace/projects/DaejiPartyCrawler/kakao_local_api/assets/chromedriver"
+# driver = webdriver.Chrome(os.path.join(os.getcwd(), chromedriver_path), options=options)  # chromedriver 열기
+driver = webdriver.Chrome(chromedriver_path, options=options)  # chromedriver 열기
 
 
-def main():
+def main(place_infos):
     global driver, load_wb, review_num
 
     driver.implicitly_wait(4)  # 렌더링 될때까지 기다린다 4초
     driver.get('https://map.kakao.com/')  # 주소 가져오기
 
     # 검색할 목록
-    place_infos = ['이원화구포국시']
+    # place_infos = ['이원화구포국시']
 
     for i, place in enumerate(place_infos):
         # delay
@@ -177,6 +179,5 @@ def extract_review(place_name):
 
 
 if __name__ == "__main__":
-    main()
+    main(['이원화구포국시'])
 
-extract_review('이원화구포국시')

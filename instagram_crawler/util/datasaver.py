@@ -1,8 +1,8 @@
 import os
 import json
 import datetime
-from util.settings import Settings
-from .util import check_folder
+from instagram_crawler.util.settings import Settings
+from instagram_crawler.util.util import check_folder
 
 
 class Datasaver:
@@ -26,9 +26,23 @@ class Datasaver:
         else:
             file_commenters = os.path.join(Settings.profile_commentors_location, username + "_commenters.txt")
 
-        print(file_commenters)
         with open(file_commenters, 'w') as fc:
             for line in user_commented_list:
+                fc.write(line)
+                fc.write("\n")
+        fc.close()
+
+    def save_restaurant_keywords_txt(restaurant_keywords):
+        check_folder(Settings.restaurant_keywords_location)
+        if (Settings.restaurant_keywords_file_with_timestamp):
+            restaurant_keywords_file = os.path.join(Settings.restaurant_keywords_location,
+                                           "restaurant_keywords_" + datetime.datetime.now().strftime(
+                                               "%Y-%m-%d %H-%M-%S") + ".txt")
+        else:
+            restaurant_keywords_file = os.path.join(Settings.restaurant_keywords_location, "restaurant_keywords.txt")
+
+        with open(restaurant_keywords_file, 'w') as fc:
+            for line in restaurant_keywords:
                 fc.write(line)
                 fc.write("\n")
         fc.close()

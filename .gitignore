@@ -103,3 +103,6 @@ images
 images*
 profiles*
 *.pkl
+
+# Custom
+**/restaurants/*.txt

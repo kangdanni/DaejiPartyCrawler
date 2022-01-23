@@ -2,7 +2,7 @@ import logging
 import os
 import sys
 import time
-from .settings import Settings
+from instagram_crawler.util.settings import Settings
 
 
 class Logger:

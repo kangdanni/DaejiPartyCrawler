@@ -2,17 +2,18 @@
 """Goes through all usernames and collects their information"""
 import sys
 
-from util.account import login
-from util.chromedriver import SetupBrowserEnvironment
-from util.cli_helper import get_all_user_names
-from util.datasaver import Datasaver
-from util.extractor import extract_information
-from util.extractor_posts import InstagramPost
-from util.settings import Settings
+from instagram_crawler.util.account import login
+from instagram_crawler.util.chromedriver import SetupBrowserEnvironment
+from instagram_crawler.util.cli_helper import get_all_user_names
+from instagram_crawler.util.datasaver import Datasaver
+from instagram_crawler.util.extractor import extract_information
+from instagram_crawler.util.extractor_posts import InstagramPost
+from instagram_crawler.util.settings import Settings
 
 
 with SetupBrowserEnvironment() as browser:
-    usernames = get_all_user_names()
+    # usernames = get_all_user_names()
+    usernames = ['choizaroad_official']
     for username in usernames:
         print('Extracting information from ' + username)
 

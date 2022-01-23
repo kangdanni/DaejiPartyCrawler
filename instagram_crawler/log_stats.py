@@ -3,7 +3,7 @@ import json
 import datetime
 import csv
 import argparse
-from util.settings import Settings
+from instagram_crawler.util.settings import Settings
 import glob
 import os
 import shutil

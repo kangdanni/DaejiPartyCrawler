@@ -1,4 +1,4 @@
-from util.logger import KakaoMapCrawlingLogger
+from kakao_map_crawler.util.logger import KakaoMapCrawlingLogger
 
 """
 Exceptions that may happen in all the webdriver code.

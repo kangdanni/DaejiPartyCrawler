@@ -11,12 +11,12 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 import requests
-from util.settings import Settings
-from .util import web_adress_navigator
-from util.extractor_posts import InstagramPost
+from instagram_crawler.util.settings import Settings
+from instagram_crawler.util.util import web_adress_navigator
+from instagram_crawler.util.extractor_posts import InstagramPost
 import datetime
-from util.instalogger import InstaLogger
-from util.exceptions import PageNotFound404, NoInstaProfilePageFound
+from instagram_crawler.util.instalogger import InstaLogger
+from instagram_crawler.util.exceptions import PageNotFound404, NoInstaProfilePageFound
 
 
 class InstagramUser:

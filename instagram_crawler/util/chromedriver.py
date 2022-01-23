@@ -6,10 +6,10 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver import DesiredCapabilities
 from webdriver_manager.chrome import ChromeDriverManager
 
-from util.exceptions import WebDriverException
-from util.instalogger import InstaLogger
-from util.settings import Settings
-from util.account import login
+from instagram_crawler.util.exceptions import WebDriverException
+from instagram_crawler.util.instalogger import InstaLogger
+from instagram_crawler.util.settings import Settings
+from instagram_crawler.util.account import login
 
 
 class SetupBrowserEnvironment:

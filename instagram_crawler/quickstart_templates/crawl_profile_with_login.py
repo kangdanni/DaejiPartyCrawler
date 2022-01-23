@@ -41,6 +41,7 @@ Settings.login_password = 'my_passwort_xxx'
 
 try:
     usernames = get_all_user_names()
+    usernames = ['choizaroad_official']
     for username in usernames:
         print('Extracting information from ' + username)
         information = []

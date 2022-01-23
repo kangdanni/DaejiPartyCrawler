@@ -15,11 +15,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from .settings import Settings
-from .time_util import sleep
-from .time_util import sleep_actual
-from .exceptions import PageNotFound404
-from .logger import KakaoMapCrawlingLogger
+from kakao_map_crawler.util.settings import Settings
+from kakao_map_crawler.util.time_util import sleep
+from kakao_map_crawler.util.time_util import sleep_actual
+from kakao_map_crawler.util.exceptions import PageNotFound404
+from kakao_map_crawler.util.logger import KakaoMapCrawlingLogger
 
 
 def web_adress_navigator(browser, link):

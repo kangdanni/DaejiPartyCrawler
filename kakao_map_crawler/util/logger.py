@@ -2,7 +2,7 @@ import logging
 import os
 import sys
 import time
-from .settings import Settings
+from kakao_map_crawler.util.settings import Settings
 
 
 class Logger:

@@ -1,6 +1,6 @@
 from os.path import join, exists
 from os import makedirs
-from .settings import BASE_DIR
+from instagram_crawler.util.settings import BASE_DIR
 import wget
 
 

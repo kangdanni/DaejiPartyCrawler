@@ -1,9 +1,9 @@
 import sys
 import os
 import wget
-from util.download_image_post import DownloadImagePost
+from instagram_crawler.util.download_image_post import DownloadImagePost
 import json
-from util.settings import BASE_DIR
+from instagram_crawler.util.settings import BASE_DIR
 
 
 def main(arguments):
