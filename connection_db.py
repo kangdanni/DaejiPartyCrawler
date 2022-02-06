@@ -17,6 +17,7 @@ def insert_restaurant_info(res):
 
     cur = conn.cursor()
 
+    place_info = dict()
     review= dict()
 
     #place insert
