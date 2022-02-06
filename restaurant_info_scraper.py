@@ -17,6 +17,7 @@ postgresql_manager = PostgresqlManager()
 with SetupBrowserEnvironment() as browser:
     location_names = extract_choizaroad_location_names()
     print('location_names:', location_names)
+
     for location_name in location_names:
         place_info = get_place_info(location_name)
         postgresql_manager.insert_one(table_name='place', data=place_info)
