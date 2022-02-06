@@ -24,4 +24,4 @@ def extract_review_info(browser, restaurant_id):
                 'rating': int(rating_element.text),
                 'comment': comment_element.text,
             })
-    return reviews
+    return [{**review, 'id': int(restaurant_id)} for review in reviews]
