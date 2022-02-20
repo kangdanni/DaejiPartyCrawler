@@ -20,6 +20,17 @@ class PostgresqlManager:
         self.cursor = self.connection.cursor()
         print(f"connnection established to {getenv('DB_HOST')}")
 
+    def find(self, table_name, columns, conditions={}):
+        columns = ', '.join(columns)
+        conditions = ' AND '.join([
+            key + ' = ' + '\'' + str(value) + '\'' if isinstance(value, str) else key + ' = ' + str(value)
+            for key, value in conditions.items()])
+        query = f"SELECT {columns} FROM {table_name} WHERE {conditions}" if conditions \
+            else f"SELECT {columns} FROM {table_name}"
+        self.cursor.execute(query)
+        result = self.cursor.fetchall()
+        return result
+
     def insert_one(self, table_name, data):
         keys = str(tuple(data.keys())).replace('\'', '')
         values = tuple(data.values()) 
