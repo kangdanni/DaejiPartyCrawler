@@ -17,11 +17,13 @@ def extract_review_info(browser, restaurant_id):
 
     reviews = []
     for review_list in review_lists:
+        review_id = review_list.get_attribute('data-id')
         rating_element = review_list.find_element_by_css_selector('.star_info .num_rate')
         comment_element = review_list.find_element_by_css_selector('.comment_info .txt_comment > span')
         if rating_element is not None and comment_element is not None:
             reviews.append({
+                'id': review_id,
                 'rating': int(rating_element.text),
                 'comment': comment_element.text,
             })
-    return [{**review, 'id': int(restaurant_id)} for review in reviews]
+    return [{**review, 'restaurant_id': int(restaurant_id)} for review in reviews]

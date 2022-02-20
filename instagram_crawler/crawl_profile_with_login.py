@@ -31,30 +31,19 @@ Settings.login_password = IG_PASSWORD
 
 
 def extract_choizaroad_location_names(browser):
-    try:
-        usernames = ['choiza11']
-        for username in usernames:
-            print('Extracting information from ' + username)
-            information = []
-            try:
-                if len(Settings.login_username) != 0:
-                    login(browser, Settings.login_username, Settings.login_password)
-                information, user_commented_list = extract_information(browser, username, Settings.limit_amount)
-                locations = [post['location'] for post in information.to_dict()['posts'] if post['location']]
-                location_names = [location['location_name'] for location in locations]
-                location_names = list(set(location_names))
-                return location_names
+    usernames = ['choiza11']
+    for username in usernames:
+        print('Extracting information from ' + username)
+        information = []
+        try:
+            if len(Settings.login_username) != 0:
+                login(browser, Settings.login_username, Settings.login_password)
+            information, user_commented_list = extract_information(browser, username, Settings.limit_amount)
+            locations = [post['location'] for post in information.to_dict()['posts'] if post['location']]
+            location_names = [location['location_name'] for location in locations]
+            location_names = list(set(location_names))
+            return location_names
 
-            except Exception as e:
-                print("Error with user " + username)
-                print("Error trace:")
-                print(e)
-                sys.exit(1)
-
-
-    except KeyboardInterrupt:
-        print('Aborted...')
-
-    finally:
-        browser.delete_all_cookies()
-        browser.close()
+        except Exception as e:
+            print("Error with user " + username)
+            print("Error trace:", e)
