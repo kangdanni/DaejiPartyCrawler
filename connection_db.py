@@ -3,7 +3,7 @@ import psycopg2 as pg2
 import os
 from os import getenv
 
-DB_NAME =getenv("DB_NAME","")
+DB_NAME = getenv("DB_NAME","")
 DB_HOST =  getenv("DB_HOST","")
 DB_USER =  getenv("DB_USER","")
 DB_PASSWORD =  getenv("DB_PASSWORD","")

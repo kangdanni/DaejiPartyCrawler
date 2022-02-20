@@ -18,6 +18,7 @@ class PostgresqlManager:
             password=getenv('DB_PASSWORD'), 
             port=getenv('DB_PORT'))
         self.cursor = self.connection.cursor()
+        print(f"connnection established to {getenv('DB_HOST')}")
 
     def insert_one(self, table_name, data):
         keys = str(tuple(data.keys())).replace('\'', '')
@@ -35,3 +36,6 @@ class PostgresqlManager:
         self.cursor.executemany(query, values)
         self.connection.commit()
 
+    def __del__(self):
+        self.connection.close()
+        print('connection closed')
