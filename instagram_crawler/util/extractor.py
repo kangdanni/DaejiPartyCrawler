@@ -355,7 +355,7 @@ def quick_post_extract(browser, num_of_posts_to_do):
 
         JSGetPostsFromReact = """
             var feed = document.getElementsByTagName('article')[0];
-            var __reactInternalInstanceKey = Object.keys(feed).filter(k=>k.startsWith('__reactInternalInstance'))[0]
+            var __reactInternalInstanceKey = Object.keys(feed).filter(k=>k.startsWith('__react'))[0]
             var posts = feed[__reactInternalInstanceKey].return.stateNode.state.combinedPosts
             return posts;
         """
