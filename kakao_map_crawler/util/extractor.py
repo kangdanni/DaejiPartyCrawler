@@ -43,8 +43,6 @@ def extract_reviews(browser, restaurant_id):
         page_count = len(browser.find_elements_by_class_name('link_page'))
         index = 3
         for i in range(page_count - 1):
-            print('i', i)
-            print('index', index)
             browser.find_element_by_css_selector('#mArticle > div.cont_evaluation > div.evaluation_review > div > a:nth-child(' + str(index) +')').send_keys(Keys.ENTER)
             sleep(1)
             reviews.extend(extract_review_info(browser))
@@ -62,8 +60,6 @@ def extract_reviews(browser, restaurant_id):
         try:
             page_count = len(browser.find_elements_by_class_name('link_page'))
             for i in range(page_count - 1):
-                print('i', i)
-                print('index', index)
                 browser.find_element_by_css_selector('#mArticle > div.cont_evaluation > div.evaluation_review > div > a:nth-child(' + str(index) +')').send_keys(Keys.ENTER)
                 sleep(1)
                 reviews.extend(extract_review_info(browser))
